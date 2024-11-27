@@ -1,0 +1,116 @@
+<p>Use the mirror closest to you for faster downloads and better package management performance. All mirrors are available over both HTTP and HTTPS.</p>
+
+        <h2>Available Mirrors</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mirror URL</th>
+                    <th>Country</th>
+                    <th>Sponsor(s)</th>
+                </tr>
+            </thead>
+            <tbody>
+<tr>
+                    <td><a href="https://au.arch.niranjan.co" target="_blank">https://au.arch.niranjan.co</a></td>
+                    <td>Albania</td>
+                    <td><a href="https://dub.sh/flowvps" target="_blank">FlowVPS</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://al.arch.niranjan.co" target="_blank">https://al.arch.niranjan.co</a></td>
+                    <td>Albania</td>
+                    <td><a href="https://dub.sh/albahost" target="_blank">Albahost</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://de.arch.niranjan.co" target="_blank">https://de.arch.niranjan.co</a></td>
+                    <td>Germany</td>
+                    <td><a href="https://dub.sh/avoro" target="_blank">Avoro (DataForest)</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://in.arch.niranjan.co" target="_blank">https://in.arch.niranjan.co</a></td>
+                    <td>India</td>
+                    <td><a href="https://dub.sh/digirdp" target="_blank">DigiRDP</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://ro.arch.niranjan.co" target="_blank">https://ro.arch.niranjan.co</a></td>
+                    <td>Romania</td>
+                    <td>
+                        <a href="https://dub.sh/host-c" target="_blank">Host-C</a>, 
+                        <a href="https://dub.sh/torchbyte" target="_blank">Torchbyte</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="https://sg.arch.niranjan.co" target="_blank">https://sg.arch.niranjan.co</a></td>
+                    <td>Singapore</td>
+                    <td><a href="https://dub.sh/kuroit" target="_blank">Kuroit</a></td>
+                </tr>
+                <tr>
+                    <td><a href="https://us.arch.niranjan.co" target="_blank">https://us.arch.niranjan.co</a></td>
+                    <td>United States</td>
+                    <td>
+                        <a href="https://dub.sh/kuroit" target="_blank">Kuroit</a>,
+                        <a href="https://dub.sh/racknerd" target="_blank">Racknerd<a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Using a Mirror in Pacman</h2>
+        <p>To configure Pacman to use a specific mirror, follow these steps:</p>
+        <ol>
+            <li>Open <code>/etc/pacman.d/mirrorlist</code> with root privileges:
+                <pre>sudo nano /etc/pacman.d/mirrorlist</pre>
+            </li>
+            <li>Add the desired mirror URL at the top of the file:
+                <pre>Server = https://&lt;country-code&gt;.arch.niranjan.co/$repo/os/$arch</pre>
+                Replace <code>&lt;country-code&gt;</code> with the code for the mirror you want to use (e.g., <code>in</code> for India, <code>de</code> for Germany).
+            </li>
+            <li>Save the file and run:
+                <pre>sudo pacman -Sy</pre>
+            </li>
+        </ol>
+
+        <h2>Contact and Support</h2>
+        <p>For any issues or feedback regarding the mirrors, contact me at <a href="mailto:me@niranjan.co">me@niranjan.co</a>.</p>
+
+        <h2>Disclaimer</h2>
+        <p>This archive is provided as a free service to the public. All files are offered "as is," and I am not liable for any misuse, storage, or transmission of the files hosted on these mirrors.</p>
+
+        <h2>Sponsors</h2>
+        <p>A big thank you to our sponsors:</p>
+        <ul>
+<li><strong>Australia:</strong> <a href="https://flowvps.com/" target="_blank">FlowVPS</a></li>
+            <li><strong>Albania:</strong> <a href="https://www.albahost.net/" target="_blank">Albahost</a></li>
+            <li><strong>Germany:</strong> <a href="https://avoro.eu/en" target="_blank">Avoro (DataForest)</a></li>
+            <li><strong>India:</strong> <a href="https://digirdp.com/" target="_blank">DigiRDP</a></li>
+            <li><strong>Romania:</strong> 
+                <a href="https://www.host-c.com/" target="_blank">Host-C</a>, 
+                <a href="https://torchbyte.com/" target="_blank">Torchbyte</a>
+            </li>
+            <li><strong>Singapore:</strong> <a href="https://www.kuroit.com" target="_blank">Kuroit</a></li>
+            <li><strong>United States:</strong> 
+                <a href="https://www.kuroit.com/" target="_blank">Kuroit</a>,
+                <a href="https://www.racknerd.com/" target="_blank">Racknerd</a>
+            </li>
+        </ul>
+        <p>Thank you for your support <span class="heart">&#x2764;</span>!</p>
+                <h2>Subscribe to updates</h2>
+        <iframe data-tally-src="https://tally.so/embed/wodBeN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="352" frameborder="0" marginheight="0" marginwidth="0" title="Sign up for Mirror Updates"></iframe>
+        <script>
+            var d=document,w="https://tally.so/widgets/embed.js",v=function() {
+                "undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e) {
+                    e.src=e.dataset.tallySrc
+                })
+            };
+            if("undefined"!=typeof Tally)v();
+            else if(d.querySelector('script[src="'+w+'"]')==null){
+                var s=d.createElement("script");
+                s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);
+            }
+        </script>
+    </main>
+
+    <footer>
+        <p>Linux, Arch Linux, and the Arch Linux Logo are trademarks of their respective owners.</p>
+    </footer>
+</body>
+</html>
