@@ -2,15 +2,27 @@
 (
     flock -n 200 || { echo "Lock acquisition failed. Another sync process is running."; exit 1; }
     echo "Lock acquired. Starting mirror sync process."
-
+    
+    TEMP_CLEANUP_DIR="/var/www/html/pool/packages/.~tmp~"
+    if [ -d "$TEMP_CLEANUP_DIR" ]; then
+        echo "Found temporary directory: $TEMP_CLEANUP_DIR"
+        echo "Removing temporary directory..."
+        rm -rf "$TEMP_CLEANUP_DIR"
+        if [ $? -eq 0 ]; then
+            echo "Successfully removed temporary directory: $TEMP_CLEANUP_DIR"
+        else
+            echo "Warning: Failed to remove temporary directory: $TEMP_CLEANUP_DIR"
+        fi
+    else
+        echo "No temporary directory found at: $TEMP_CLEANUP_DIR"
+    fi
+    
     MIRRORS=(
         "rsync://mirror.moson.org/arch/"
         "rsync://mirror.peeres-telecom.fr/archlinux/"
         "rsync://archlinux.thaller.ws/archlinux/"
-        "rsync://rsync.osbeck.com/archlinux/"
         "rsync://arch.mirror.constant.com/archlinux/"
     )
-
     LOCAL_MIRROR="/var/www/html"
     TEMP_DIR="/tmp/mirror_check"
     mkdir -p "$TEMP_DIR"
