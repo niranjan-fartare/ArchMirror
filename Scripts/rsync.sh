@@ -1,5 +1,33 @@
 #!/bin/bash
 
+packages=("bc" "jq")
+
+# Ensure script is run as root
+if [[ $EUID -ne 0 ]]; then
+    echo "Please run as root (sudo)."
+    exit 1
+fi
+
+echo "Checking required packages..."
+
+for pkg in "${packages[@]}"; do
+    if dpkg -s "$pkg" >/dev/null 2>&1; then
+        echo "[OK] $pkg is already installed."
+    else
+        echo "[MISSING] $pkg is not installed. Installing..."
+        apt update -y
+        apt install -y "$pkg"
+
+        if dpkg -s "$pkg" >/dev/null 2>&1; then
+            echo "[DONE] $pkg installed successfully."
+        else
+            echo "[ERROR] Failed to install $pkg."
+        fi
+    fi
+done
+
+echo "All checks complete."
+
 # Function to get the fastest mirror from Arch Linux API
 get_fastest_mirror() {
     local api_url="https://archlinux.org/mirrors/status/json/"
