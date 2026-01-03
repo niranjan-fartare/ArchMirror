@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find /var/www/html -type d -name "*tmp*" -exec rm -r {} +
+find /var/www/html -name '.~tmp~' -exec rm -r {} +
 
 packages=("bc" "jq")
 
