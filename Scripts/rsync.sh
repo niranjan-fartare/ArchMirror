@@ -30,7 +30,7 @@ echo "All checks complete."
 
 # Function to get the fastest mirror from Arch Linux API
 get_fastest_mirror() {
-    local api_url="https://archlinux.org/mirrors/status/json/"
+    local api_url="https://archlinux.org/mirrors/status/tier/1/json/"
     local max_delay=600  # 10 mins max delay
     local top_n=5       # Test top 10 mirrors
     local temp_dir="/tmp/mirror_speed_test"
