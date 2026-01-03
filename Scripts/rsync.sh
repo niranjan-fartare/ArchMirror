@@ -1,5 +1,7 @@
 #!/bin/bash
 
+find /var/www/html -type d -name "*tmp*" -exec rm -r {} +
+
 packages=("bc" "jq")
 
 # Ensure script is run as root
@@ -12,7 +14,7 @@ echo "Checking required packages..."
 
 for pkg in "${packages[@]}"; do
     if dpkg -s "$pkg" >/dev/null 2>&1; then
-        echo "[OK] $pkg is already installed."
+        #echo "[OK] $pkg is already installed."
     else
         echo "[MISSING] $pkg is not installed. Installing..."
         apt update -y
