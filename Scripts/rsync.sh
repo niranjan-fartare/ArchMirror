@@ -184,7 +184,7 @@ get_fastest_mirror() {
     fi
     
     echo "Starting rsync from $best_mirror to $LOCAL_MIRROR"
-    rsync -rlptH --safe-links --delete-delay --delay-updates --progress --stats "$best_mirror" "$LOCAL_MIRROR"
+    rsync -rlptH --safe-links --delete --delay-updates --progress --stats "$best_mirror" "$LOCAL_MIRROR"
     rsync_status=$?
     echo "Rsync completed with status: $rsync_status"
     
