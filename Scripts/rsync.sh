@@ -14,7 +14,7 @@ echo "Checking required packages..."
 
 for pkg in "${packages[@]}"; do
     if dpkg -s "$pkg" >/dev/null 2>&1; then
-        #echo "[OK] $pkg is already installed."
+        echo "[OK] $pkg is already installed."
     else
         echo "[MISSING] $pkg is not installed. Installing..."
         apt update -y
